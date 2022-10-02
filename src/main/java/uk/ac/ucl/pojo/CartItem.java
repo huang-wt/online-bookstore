@@ -3,7 +3,7 @@ package uk.ac.ucl.pojo;
 import java.math.BigDecimal;
 
 /**
- * @author Taobang
+ * @author huang-wt
  * @create 2022-09-25 14:44
  */
 public class CartItem {

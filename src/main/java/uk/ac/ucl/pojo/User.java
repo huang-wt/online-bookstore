@@ -1,10 +1,11 @@
 package uk.ac.ucl.pojo;
 
 /**
- * @author Taobang
+ * @author huang-wt
  * @create 2022-09-18 15:16
  */
 public class User {
+
     private Integer id;
     private String username;
     private String password;

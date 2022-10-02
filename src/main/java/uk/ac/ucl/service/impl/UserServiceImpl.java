@@ -6,7 +6,7 @@ import uk.ac.ucl.pojo.User;
 import uk.ac.ucl.service.UserService;
 
 /**
- * @author Taobang
+ * @author huang-wt
  * @create 2022-09-18 17:49
  */
 public class UserServiceImpl implements UserService {

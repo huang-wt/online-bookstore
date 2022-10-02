@@ -58,4 +58,14 @@
         <url-pattern>/orderServlet</url-pattern>
     </servlet-mapping>
 
+    <filter>
+        <filter-name>ManagerFilter</filter-name>
+        <filter-class>uk.ac.ucl.filter.ManagerFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ManagerFilter</filter-name>
+        <url-pattern>/pages/manager/*</url-pattern>
+        <url-pattern>/manage/bookServlet</url-pattern>
+    </filter-mapping>
+
 </web-app>

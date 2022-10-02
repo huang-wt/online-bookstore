@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * @author Taobang
+ * @author huang-wt
  * @create 2022-09-25 14:52
  */
 public class CartServlet extends BaseServlet {
@@ -33,7 +33,7 @@ public class CartServlet extends BaseServlet {
 
         req.getSession().setAttribute("lastBookName", cartItem.getName());
 
-        resp.sendRedirect(req.getHeader("Referer"));
+        resp.sendRedirect(req.getHeader("Referer")); // to the same page
     }
 
     protected void deleteItem(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

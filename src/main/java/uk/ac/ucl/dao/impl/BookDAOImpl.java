@@ -6,7 +6,7 @@ import uk.ac.ucl.pojo.Book;
 import java.util.List;
 
 /**
- * @author Taobang
+ * @author huang-wt
  * @create 2022-09-23 19:14
  */
 public class BookDAOImpl extends BaseDAO implements BookDAO {
@@ -14,7 +14,6 @@ public class BookDAOImpl extends BaseDAO implements BookDAO {
     @Override
     public int addBook(Book book) {
         String sql = "insert into t_book(`name` , `author` , `price` , `sales` , `stock` , `img_path`) values(?, ?, ?, ?, ?, ?)";
-
         return update(sql, book.getName(), book.getAuthor(), book.getPrice(), book.getSales(), book.getStock(), book.getImgPath());
     }
 

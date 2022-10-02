@@ -11,17 +11,18 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * @author Taobang
+ * @author huang-wt
  * @create 2022-09-18 16:10
  */
 public abstract class BaseDAO {
+
     private QueryRunner queryRunner = new QueryRunner();
 
     /**
-     * Execute Insert/Update/Delete sql
-     * @param sql
-     * @param args
-     * @return
+     * Execute INSERT/UPDATE/DELETE statement
+     * @param sql sql statement for inserting new record(s)/update record(s)/delete record(s)
+     * @param args required arguments in sql statement
+     * @return -1 if unsuccessful execution
      */
     public int update(String sql, Object ... args) {
         Connection connection = JdbcUtils.getConnection();
@@ -37,12 +38,12 @@ public abstract class BaseDAO {
     }
 
     /**
-     * Execute Query
-     * @param type
-     * @param sql
-     * @param args
+     * Execute QUERY
+     * @param type bean (record) class type
+     * @param sql sql statement for select a record
+     * @param args required arguments in sql statement
      * @param <T>
-     * @return
+     * @return null if unsuccessful execution or record not found; or the selected record object
      */
     public <T> T queryForOne(Class<T> type, String sql, Object ... args) {
         Connection connection = JdbcUtils.getConnection();
@@ -58,12 +59,12 @@ public abstract class BaseDAO {
     }
 
     /**
-     * Execute Query for multiple results
-     * @param type
-     * @param sql
-     * @param args
+     * Execute QUERY for multiple results
+     * @param type bean (record) class type
+     * @param sql sql statement for select multiple records
+     * @param args required arguments in sql statement
      * @param <T>
-     * @return
+     * @return null if unsuccessful execution; or a list containing selected record objects
      */
     public <T> List<T> queryForList(Class<T> type, String sql, Object ... args) {
         Connection connection = JdbcUtils.getConnection();
@@ -79,10 +80,10 @@ public abstract class BaseDAO {
     }
 
     /**
-     * Execute Query for some scalar value
-     * @param sql
-     * @param args
-     * @return
+     * Execute QUERY for some scalar value
+     * @param sql sql statement for some scalar value (e.g. count)
+     * @param args required arguments in sql statement
+     * @return null if unsuccessful execution; or required object
      */
     public Object queryForSingleValue(String sql, Object ... args) {
         Connection connection = JdbcUtils.getConnection();

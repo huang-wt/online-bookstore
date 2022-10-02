@@ -8,7 +8,7 @@ import uk.ac.ucl.pojo.User;
 import static org.junit.Assert.*;
 
 /**
- * @author Taobang
+ * @author huang-wt
  * @create 2022-09-18 17:20
  */
 public class UserDAOTest {

@@ -10,5 +10,5 @@
 <div>
   <a href="manage/bookServlet?action=page">Book Management</a> |
   <a href="pages/manager/order_manager.jsp">Order Management</a> |
-  <a href="index.jsp">Home Page</a>
+  <a href="index.jsp">Home</a>
 </div>

@@ -14,20 +14,18 @@
     </style>
 </head>
 <body>
+    <div id="header">
+        <img class="logo_img" alt="" src="static/img/logo.gif" >
+        <span class="wel_word">Checking Out</span>
+        <%@ include file="/pages/common/login_success_menu.jsp"%>
+    </div>
 
-<div id="header">
-    <img class="logo_img" alt="" src="static/img/logo.gif" >
-    <span class="wel_word">Checking Out</span>
-    <%@ include file="/pages/common/login_success_menu.jsp"%>
-</div>
+    <div id="main">
 
-<div id="main">
+        <h1>Your Order number is ${sessionScope.orderId}.</h1>
 
-    <h1>Your Order number is ${sessionScope.orderId}.</h1>
+    </div>
 
-
-</div>
-
-<%@include file="/pages/common/footer.jsp"%>
+    <%@include file="/pages/common/footer.jsp"%>
 </body>
 </html>

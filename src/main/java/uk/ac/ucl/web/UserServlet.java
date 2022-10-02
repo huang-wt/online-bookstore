@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * @author Taobang
+ * @author huang-wt
  * @create 2022-09-21 13:33
  */
 public class UserServlet extends BaseServlet {
@@ -21,25 +21,19 @@ public class UserServlet extends BaseServlet {
 
     protected void logout(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getSession().invalidate();
-        resp.sendRedirect(req.getContextPath());
+        resp.sendRedirect(req.getContextPath()); // to index page
     }
 
-    /**
-     * Process login event
-     * @param req
-     * @param resp
-     * @throws ServletException
-     * @throws IOException
-     */
     protected void login(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // 1. Request parameters
+        // Request parameters
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
-        // 2. Check
+        // Null if one or both of the given username and password do not exist or do not match
         User loginUser = userService.login(new User(null, username, password, null));
 
-        if (loginUser == null) { // fail to log in
+        if (loginUser == null) {
+            // Fail to log in
             req.setAttribute("msg", "username or password invalid");
             req.setAttribute("username", username);
             req.getRequestDispatcher("/pages/user/login.jsp").forward(req, resp);
@@ -49,38 +43,27 @@ public class UserServlet extends BaseServlet {
         }
     }
 
-    /**
-     * Process register event
-     * @param req
-     * @param resp
-     * @throws ServletException
-     * @throws IOException
-     */
     protected void register(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String token = (String) req.getSession().getAttribute(Constants.KAPTCHA_SESSION_KEY);
         req.getSession().removeAttribute(Constants.KAPTCHA_SESSION_KEY);
 
-        // 1. Request parameters
+        // Request parameters
         String username = req.getParameter("username");
-        String password = req.getParameter("password");
+//        String password = req.getParameter("password");
         String email = req.getParameter("email");
         String code = req.getParameter("code");
 
         User user = WebUtils.copyParamToBean(req.getParameterMap(), new User());
 
-        // 2. Check
         if (token != null && token.equalsIgnoreCase(code)) {
             if (userService.existUsername(username)) {
-//                System.out.println(1);
                 req.setAttribute("msg", "Username Exists");
                 req.getRequestDispatcher("/pages/user/register.jsp").forward(req, resp);
             } else {
-//                System.out.println(2);
                 userService.registerUser(user);
                 req.getRequestDispatcher("/pages/user/register_success.jsp").forward(req, resp);
             }
         } else {
-//            System.out.println(3);
             req.setAttribute("msg", "Code Error");
             req.setAttribute("username", username);
             req.setAttribute("email", email);

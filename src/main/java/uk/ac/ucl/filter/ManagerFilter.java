@@ -5,10 +5,10 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 /**
- * @author Taobang
+ * @author huang-wt
  * @create 2022-09-25 23:22
  */
-public class ManagerFilter implements Filter{
+public class ManagerFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {

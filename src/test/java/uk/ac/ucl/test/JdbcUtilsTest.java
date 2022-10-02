@@ -6,7 +6,7 @@ import uk.ac.ucl.utils.JdbcUtils;
 import java.sql.Connection;
 
 /**
- * @author Taobang
+ * @author huang-wt
  * @create 2022-09-18 15:47
  */
 public class JdbcUtilsTest {

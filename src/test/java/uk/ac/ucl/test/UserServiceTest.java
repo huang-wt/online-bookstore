@@ -8,7 +8,7 @@ import uk.ac.ucl.service.impl.UserServiceImpl;
 import static org.junit.Assert.*;
 
 /**
- * @author Taobang
+ * @author huang-wt
  * @create 2022-09-18 17:52
  */
 public class UserServiceTest {

@@ -15,15 +15,15 @@
 </head>
 <body>
 
-<div id="header">
-    <img class="logo_img" alt="" src="static/img/logo.gif" >
-    <span class="wel_word">Management System</span>
-    <%@ include file="/pages/common/manager_menu.jsp"%>
-</div>
+    <div id="header">
+        <img class="logo_img" alt="" src="static/img/logo.gif" >
+        <span class="wel_word">Management System</span>
+        <%@ include file="/pages/common/manager_menu.jsp"%>
+    </div>
 
-<div id="main">
-    <h1>Welcome to Management System</h1>
-</div>
+    <div id="main">
+        <h1>Welcome to Management System</h1>
+    </div>
 
 <%@include file="/pages/common/footer.jsp"%>
 </body>

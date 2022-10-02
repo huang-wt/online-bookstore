@@ -33,52 +33,52 @@
 </head>
 <body>
 
-<div id="header">
-    <img class="logo_img" alt="" src="static/img/logo.gif" >
-    <span class="wel_word">Book Management System</span>
-    <%@ include file="/pages/common/manager_menu.jsp"%>
-</div>
+    <div id="header">
+        <img class="logo_img" alt="" src="static/img/logo.gif" >
+        <span class="wel_word">Book Management System</span>
+        <%@ include file="/pages/common/manager_menu.jsp"%>
+    </div>
 
-<div id="main">
-    <table>
-        <tr>
-            <td>Name</td>
-            <td>Price</td>
-            <td>Author</td>
-            <td>Sales</td>
-            <td>Stock</td>
-            <td colspan="2">Operations</td>
-        </tr>
-
-        <c:forEach items="${requestScope.page.items}" var="book">
+    <div id="main">
+        <table>
             <tr>
-                <td>${book.name}</td>
-                <td>${book.price}</td>
-                <td>${book.author}</td>
-                <td>${book.sales}</td>
-                <td>${book.stock}</td>
-                <td><a href="manage/bookServlet?action=getBook&id=${book.id}&method=update&pageNo=${requestScope.page.pageNo}">Modify</a></td>
-<%--                <td><a href="manage/bookServlet?action=getBook&id=${book.id}">Modify</a></td>--%>
-                <td><a class="deleteClass" href="manage/bookServlet?action=delete&id=${book.id}&pageNo=${requestScope.page.pageNo}">Delete</a></td>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Author</td>
+                <td>Sales</td>
+                <td>Stock</td>
+                <td colspan="2">Operations</td>
             </tr>
-        </c:forEach>
+
+            <c:forEach items="${requestScope.page.items}" var="book">
+                <tr>
+                    <td>${book.name}</td>
+                    <td>${book.price}</td>
+                    <td>${book.author}</td>
+                    <td>${book.sales}</td>
+                    <td>${book.stock}</td>
+                    <td><a href="manage/bookServlet?action=getBook&id=${book.id}&method=update&pageNo=${requestScope.page.pageNo}">Modify</a></td>
+    <%--                <td><a href="manage/bookServlet?action=getBook&id=${book.id}">Modify</a></td>--%>
+                    <td><a class="deleteClass" href="manage/bookServlet?action=delete&id=${book.id}&pageNo=${requestScope.page.pageNo}">Delete</a></td>
+                </tr>
+            </c:forEach>
 
 
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><a href="pages/manager/book_edit.jsp?method=add&pageNo=${requestScope.page.pagesTotalNumber}">Add Book</a></td>
-<%--            <td><a href="pages/manager/book_edit.jsp">Add Book</a></td>&ndash;%&gt;--%>
-        </tr>
-    </table>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a href="pages/manager/book_edit.jsp?method=add&pageNo=${requestScope.page.pagesTotalNumber}">Add Book</a></td>
+    <%--            <td><a href="pages/manager/book_edit.jsp">Add Book</a></td>&ndash;%&gt;--%>
+            </tr>
+        </table>
 
-    <%@include file="/pages/common/page_nav.jsp"%>
-</div>
+        <%@include file="/pages/common/page_nav.jsp"%>
+    </div>
 
-<%@include file="/pages/common/footer.jsp"%>
+    <%@include file="/pages/common/footer.jsp"%>
 </body>
 </html>

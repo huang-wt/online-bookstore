@@ -11,7 +11,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 /**
- * @author Taobang
+ * @author huang-wt
  * @create 2022-09-23 19:26
  */
 public class BookDAOTest {
@@ -36,6 +36,11 @@ public class BookDAOTest {
     @Test
     public void queryBookById() {
         System.out.println(bookDAO.queryBookById(21));
+    }
+
+    @Test
+    public void queryBooks() {
+        bookDAO.queryBooks().forEach(System.out::println);
     }
 
     @Test

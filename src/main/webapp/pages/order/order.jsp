@@ -15,33 +15,30 @@
 </head>
 <body>
 
-<div id="header">
-    <img class="logo_img" alt="" src="static/img/logo.gif" >
-    <span class="wel_word">My Orders</span>
-    <%@ include file="/pages/common/login_success_menu.jsp"%>
-</div>
+    <div id="header">
+        <img class="logo_img" alt="" src="static/img/logo.gif" >
+        <span class="wel_word">My Orders</span>
+        <%@ include file="/pages/common/login_success_menu.jsp"%>
+    </div>
 
-<div id="main">
+    <div id="main">
+        <table>
+            <tr>
+                <td>Date</td>
+                <td>Price</td>
+                <td>Status</td>
+                <td>Details</td>
+            </tr>
 
-    <table>
-        <tr>
-            <td>Date</td>
-            <td>Price</td>
-            <td>Status</td>
-            <td>Details</td>
-        </tr>
+            <tr>
+                <td>01/09/2022</td>
+                <td>190.00</td>
+                <td>Completed</td>
+                <td><a href="#">details</a></td>
+            </tr>
+        </table>
+    </div>
 
-        <tr>
-            <td>01/09/2022</td>
-            <td>190.00</td>
-            <td>Completed</td>
-            <td><a href="#">details</a></td>
-        </tr>
-    </table>
-
-
-</div>
-
-<%@include file="/pages/common/footer.jsp"%>
+    <%@include file="/pages/common/footer.jsp"%>
 </body>
 </html>
