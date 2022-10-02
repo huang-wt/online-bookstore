@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.Map;
 
 /**
- * @author Taobang
+ * @author huang-wt
  * @create 2022-09-25 22:07
  */
 public class OrderServiceImpl implements OrderService {
@@ -24,7 +24,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public String createOrder(Cart cart, Integer userId) {
+        // Generate order id (combination of current time and user id)
         String orderId = System.currentTimeMillis() + "" + userId;
+
         Order order = new Order(orderId, new Date(), cart.getTotalPriceAmount(), 0, userId);
         orderDAO.saveOrder(order);
 

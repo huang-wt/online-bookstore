@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * @author Taobang
+ * @author huang-wt
  * @create 2022-09-25 20:57
  */
 public class Order {
@@ -12,7 +12,7 @@ public class Order {
     private String orderId;
     private Date createTime;
     private BigDecimal totalPriceAmount;
-    private Integer status = 0; // 0:NOT YET DISPATCHED  1:SHIPPED  2:ORDER COMPLETED
+    private Integer status = 0; // 0-Ordered 1-Delivered 2-Completed
     private Integer userId;
 
     public Order() {
@@ -24,6 +24,7 @@ public class Order {
         this.totalPriceAmount = totalPriceAmount;
         this.status = status;
         this.userId = userId;
+
     }
 
     public String getOrderId() {

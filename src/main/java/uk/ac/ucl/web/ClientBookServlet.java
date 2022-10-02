@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * @author Taobang
+ * @author huang-wt
  * @create 2022-09-25 00:15
  */
 public class ClientBookServlet extends BaseServlet {
@@ -22,6 +22,7 @@ public class ClientBookServlet extends BaseServlet {
     protected void page(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int pageNo = WebUtils.parseInt(req.getParameter("pageNo"), 1);
         int itemsNumberPerPage = WebUtils.parseInt(req.getParameter("pageSize"), Page.ITEMS_NUMBER_PER_PAGE);
+
         Page<Book> page = bookService.page(pageNo, itemsNumberPerPage);
         page.setUrl("client/bookServlet?action=page");
         req.setAttribute("page", page);

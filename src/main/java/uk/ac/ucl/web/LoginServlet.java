@@ -11,23 +11,25 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * @author Taobang
+ * @author huang-wt
  * @create 2022-09-21 10:32
  */
+@Deprecated
 public class LoginServlet extends HttpServlet {
 
     private UserService userService = new UserServiceImpl();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // 1. Request parameters
+        // Request parameters
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
-        // 2. Check
+        // Check if the given username and password exist and match
         User loginUser = userService.login(new User(null, username, password, null));
 
-        if (loginUser == null) { // fail to log in
+        if (loginUser == null) {
+            // Fail to log in
             req.setAttribute("msg", "username or password invalid");
             req.setAttribute("username", username);
             req.getRequestDispatcher("/pages/user/login.jsp").forward(req, resp);

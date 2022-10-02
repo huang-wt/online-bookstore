@@ -39,6 +39,11 @@ public class BookDAOTest {
     }
 
     @Test
+    public void queryBooks() {
+        bookDAO.queryBooks().forEach(System.out::println);
+    }
+
+    @Test
     public void queryForBooksTotalNumber() {
         System.out.println(bookDAO.queryForBooksTotalNumber());
     }

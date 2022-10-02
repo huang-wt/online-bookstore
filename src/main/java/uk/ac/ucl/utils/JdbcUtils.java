@@ -10,12 +10,13 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 /**
- * @author Taobang
+ * @author huang-wt
  * @create 2022-09-18 15:20
  */
 public class JdbcUtils {
 
     private static DruidDataSource dataSource;
+    // location: Online-Book-Store-Web-Application/src/main/resources/jdbc.properties
     private static InputStream is = JdbcUtils.class.getClassLoader().getResourceAsStream("jdbc.properties");
 
     static {
@@ -45,7 +46,7 @@ public class JdbcUtils {
     }
 
     /**
-     *
+     * Close connection
      * @param conn
      */
     public static void close(Connection conn) {

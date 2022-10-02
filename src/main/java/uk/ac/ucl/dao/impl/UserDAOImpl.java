@@ -4,10 +4,11 @@ import uk.ac.ucl.dao.UserDAO;
 import uk.ac.ucl.pojo.User;
 
 /**
- * @author Taobang
+ * @author huang-wt
  * @create 2022-09-18 17:13
  */
 public class UserDAOImpl extends BaseDAO implements UserDAO {
+
     @Override
     public User queryUserByUsername(String username) {
         String sql = "select `id`, `username`, `password`, `email` from t_user where username = ?";

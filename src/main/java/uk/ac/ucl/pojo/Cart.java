@@ -2,11 +2,10 @@ package uk.ac.ucl.pojo;
 
 import java.math.BigDecimal;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
- * @author Taobang
+ * @author huang-wt
  * @create 2022-09-25 14:42
  */
 public class Cart {
@@ -43,14 +42,14 @@ public class Cart {
 
     public void clear() {
         totalCount = 0;
-        totalPriceAmount = totalPriceAmount = new BigDecimal(0);
+        totalPriceAmount =  new BigDecimal(0);
         items.clear();
     }
 
     public void updateCount(Integer id, Integer count) {
         CartItem item = items.get(id);
 
-        // Check if the item already exists in Cart
+        // Check if the item exists in Cart
         if (item != null) {
             totalCount += count - item.getCount();
             totalPriceAmount = totalPriceAmount.add(item.getPrice().multiply(new BigDecimal(count - item.getCount())));

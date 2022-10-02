@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Sign in Page</title>
+    <title>Account Created</title>
     <%-- base, css, jquery --%>
     <%@include file="/pages/common/head.jsp"%>
     <style type="text/css">
@@ -18,19 +18,17 @@
     </style>
 </head>
 <body>
-<div id="header">
-    <img class="logo_img" alt="" src="static/img/logo.gif" >
-    <span class="wel_word"></span>
-    <%@ include file="/pages/common/login_success_menu.jsp"%>
-</div>
+    <div id="header">
+        <img class="logo_img" alt="" src="static/img/logo.gif" >
+        <span class="wel_word"></span>
+        <%@ include file="/pages/common/login_success_menu.jsp"%>
+    </div>
 
-<div id="main">
+    <div id="main">
+        <h1>Register Successfully! <a href="index.jsp">Home Page</a></h1>
 
-    <h1>Register Successfully! <a href="index.jsp">Home Page</a></h1>
-
-</div>
-
-<%@include file="/pages/common/footer.jsp"%>
+    </div>
+    <%@include file="/pages/common/footer.jsp"%>
 
 </body>
 </html>

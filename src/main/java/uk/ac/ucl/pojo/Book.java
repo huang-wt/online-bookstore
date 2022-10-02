@@ -3,7 +3,7 @@ package uk.ac.ucl.pojo;
 import java.math.BigDecimal;
 
 /**
- * @author Taobang
+ * @author huang-wt
  * @create 2022-09-23 18:57
  */
 public class Book {
